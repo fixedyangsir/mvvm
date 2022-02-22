@@ -1,18 +1,25 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.fixedyangsir.mvvm</id>
-    <name>mvvm</name>
+    <id>com.fixed.yang</id>
+    <name>YangMVVM</name>
     <vendor>fixedyangsir</vendor>
 
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.fixedyangsir.mvvm.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.fixedyangsir.mvvm.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.fixedyangsir.temp.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.fixedyangsir.temp.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.fixedyangsir.mvvm.listeners.MyProjectManagerListener"
+        <listener class="com.github.fixedyangsir.temp.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="com.github.fixedyangsir.mvvm.SamplePluginTemplateProviderImpl" />
+    </extensions>
 </idea-plugin>

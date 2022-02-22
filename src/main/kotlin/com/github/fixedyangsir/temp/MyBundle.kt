@@ -1,4 +1,4 @@
-package com.github.fixedyangsir.mvvm
+package com.github.fixedyangsir.temp
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

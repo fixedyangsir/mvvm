@@ -1,6 +1,6 @@
-package com.github.fixedyangsir.mvvm.services
+package com.github.fixedyangsir.temp.services
 
-import com.github.fixedyangsir.mvvm.MyBundle
+import com.github.fixedyangsir.temp.MyBundle
 
 class MyApplicationService {
 

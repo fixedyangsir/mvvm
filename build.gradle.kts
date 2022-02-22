@@ -7,13 +7,18 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.6.10"
+    id("org.jetbrains.kotlin.jvm") version "1.5.20"
     // Gradle IntelliJ Plugin
     id("org.jetbrains.intellij") version "1.4.0"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "1.3.1"
     // Gradle Qodana Plugin
     id("org.jetbrains.qodana") version "0.1.13"
+
+    // detekt linter - read more: https://detekt.github.io/detekt/gradle.html
+    id("io.gitlab.arturbosch.detekt") version "1.16.0"
+    // ktlint linter - read more: https://github.com/JLLeitschuh/ktlint-gradle
+    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
 }
 
 group = properties("pluginGroup")
@@ -23,9 +28,13 @@ version = properties("pluginVersion")
 repositories {
     mavenCentral()
 }
-
+dependencies {
+     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.1")
+    compileOnly(files("lib/wizard-template.jar"))
+}
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
+
     pluginName.set(properties("pluginName"))
     version.set(properties("platformVersion"))
     type.set(properties("platformType"))

@@ -1,4 +1,4 @@
-package com.github.fixedyangsir.mvvm
+package com.github.fixedyangsir.temp
 
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.psi.xml.XmlFile
