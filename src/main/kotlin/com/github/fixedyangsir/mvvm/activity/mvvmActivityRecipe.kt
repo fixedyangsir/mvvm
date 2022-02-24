@@ -36,14 +36,14 @@ fun RecipeExecutor.mvvmActivityRecipe(
     // 保存Activity
     if (isActivity) {
 
-        generateManifest(
+       /* generateManifest(
             moduleData = moduleData,
             activityClass = "${activityClass}Activity",
             packageName = packageName,
             isLauncher = false,
             hasNoActionBar = false,
             generateActivityTitle = false,
-            )
+            )*/
 
 
         save(mvvmActivity, srcOut.resolve("${activityClass}Activity.${ktOrJavaExt}"))
