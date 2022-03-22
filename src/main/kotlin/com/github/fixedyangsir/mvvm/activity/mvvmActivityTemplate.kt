@@ -36,9 +36,9 @@ val mvvmActivityTemplate
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
             suggest = {
                 if (isActivity.value) {
-                    "${activityToLayout(activityClass.value.toLowerCase())}"
+                    "${activityToLayout(activityClass.value)}"
                 } else {
-                    "${fragmentToLayout(activityClass.value.toLowerCase())}"
+                    "${fragmentToLayout(activityClass.value)}"
                 }
             }
         }

@@ -33,7 +33,7 @@ val adapterTemplate
             help = "请输入布局的名字"
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
             suggest = {
-                "list_item_" + adapterClass.value.toLowerCase()
+                "list_item_" + activityToLayout(adapterClass.value).replace("activity_","")
             }
         }
 
