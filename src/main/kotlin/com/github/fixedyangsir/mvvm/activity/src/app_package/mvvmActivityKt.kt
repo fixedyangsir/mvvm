@@ -38,6 +38,10 @@ import ${applicationPackage}.R
     override fun createObserver() {
       
     }
+    
+    override fun immersionBarEnabled(): Boolean {
+        return false
+    }
   
     """
     )
