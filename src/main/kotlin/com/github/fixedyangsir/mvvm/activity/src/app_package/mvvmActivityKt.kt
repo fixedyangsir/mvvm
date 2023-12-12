@@ -23,12 +23,15 @@ import ${applicationPackage}.R
     )
     if (userDataBinding) {
         sb.append("import ${applicationPackage}.databinding.${typeName}${activityClass}Binding\n")
-        sb.append("class ${activityClass}${typeName} : Base${typeName}<${activityClass}VM, ${typeName}${activityClass}Binding>() {")
+        sb.append("@AndroidEntryPoint\n")
+        sb.append("class ${activityClass}${typeName} : Base${typeName}<${typeName}${activityClass}Binding>() {")
     } else {
         sb.append("class ${activityClass}${typeName} : Base${typeName}<${activityClass}VM>() {\n")
     }
     sb.append(
         """
+    private val viewModel: ${activityClass}VM by viewModels()          
+            
     override fun layoutId() = R.layout.${layoutName}
     
     override fun initView(savedInstanceState: Bundle?) {
@@ -39,9 +42,7 @@ import ${applicationPackage}.R
       
     }
     
-    override fun immersionBarEnabled(): Boolean {
-        return false
-    }
+  
   
     """
     )
@@ -51,6 +52,10 @@ import ${applicationPackage}.R
                 
     override fun lazyLoadData() {
 
+    }
+    
+    override fun immersionBarEnabled(): Boolean {
+        return false
     }
             
             """

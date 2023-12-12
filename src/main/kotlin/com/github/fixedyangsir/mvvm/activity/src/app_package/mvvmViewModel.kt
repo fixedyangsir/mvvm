@@ -5,8 +5,8 @@ fun mvvmViewModel(
         activityClass:String
 )="""
 package ${packageName}.vm
-import com.yzy.mvvmlib.base.viewmodel.BaseViewModel
-class ${activityClass}VM : BaseViewModel() {
+@HiltViewModel
+class ${activityClass}VM @Inject constructor(): ViewModel() {
    
 }    
 """
